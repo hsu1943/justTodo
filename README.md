@@ -3,13 +3,16 @@
 
 过程中有一些因为与课程使用版本不一致导致的依赖报错啥的，这里都解决了，可以参考源码。
 
-### 小修改：
+## Demo
+[Just Todo](https://beltxman.com/todolist)
+
+## 小修改：
 - 当没有待办事项时，根据筛选条件不同显示不同的提示语。
 - 配置文件加入注释，加入目录清理和例外配置
 - 利用oss插件讲静态文件上传CDN
 - 修改部分样式
 
-### 测试：
+## 测试：
 
 ```bash
 git clone git@github.com:hsu1943/justTodo.git
