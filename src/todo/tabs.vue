@@ -1,7 +1,7 @@
 <template>
     <div class="helper">
         <span class="left">{{unFinishedTodoLength}} items left</span>
-        <span class="tabs">
+        <div class="tabs">
             <span
                 v-for="state in states"
                 :key="state"
@@ -10,7 +10,7 @@
             >
                 {{state}}
             </span>
-        </span>
+        </div>
         <span class="clear" @click="clearCompleted">Clear Completed</span>
     </div>
 </template>
@@ -71,6 +71,9 @@ export default {
     .clear {
         text-align: right
         cursor pointer
+        span:hover {
+            font-weight 700    
+        }
     }
     .tabs {
         width 200px
@@ -86,5 +89,8 @@ export default {
                 border-radius 5px
             }
         }
+    }
+    span:hover {
+        text-shadow: 1px 0 0;
     }
 </style>

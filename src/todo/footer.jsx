@@ -11,7 +11,7 @@ export default {
         return (
             <div id="footer">
                 <span>Github: 
-                    <a href="/"> {this.github}</a>
+                    <a href="https://github.com/hsu1943/justTodo"> {this.github}</a>
                 </span>
             </div>
         )
