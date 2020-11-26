@@ -4,7 +4,7 @@
 过程中有一些因为与课程使用版本不一致导致的依赖报错啥的，这里都解决了，可以参考源码。
 
 ## Demo
-[Just Todo](https://beltxman.com/todolist)
+<a target="_blank" href="https://beltxman.com/todolist" title="vue demo todolist">Just Todo</a>
 
 ## 小修改：
 - 当没有待办事项时，根据筛选条件不同显示不同的提示语。
