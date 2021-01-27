@@ -27,7 +27,7 @@ const config = {
         new VueLoaderPlugin(),
         // 生成html文件
         new HtmlPlugin({
-            favicon: './dist/favicon.ico',
+            favicon: 'src/assets/images/favicon.ico',
             title: 'Just Todo',
         }),
         // 环境变量插件，看package.json的命令
@@ -115,7 +115,9 @@ if (isDev) {
         vendor: ['vue']
     }
     config.output.filename = '[name].[chunkhash:8].js'
-    config.output.publicPath = 'https://beltxman.oss-cn-shanghai.aliyuncs.com/justtodo/'
+    // oss 访问路径
+    config.output.publicPath = localConfig.oss.url + '/' + localConfig.oss.prefix + '/'
+    console.log(config.output.publicPath)
     config.module.rules.push(
         {
             test: /\.styl/,
@@ -151,9 +153,9 @@ if (isDev) {
         new WebpackAliOSSPlugin({
             accessKeyId: localConfig.oss.id,
             accessKeySecret: localConfig.oss.secret,
-            region: 'oss-cn-shanghai',
-            bucket: 'beltxman',
-            prefix: 'justtodo',   // "<bucket>/<prefix>/icon_696aaa22.ttf"
+            region: localConfig.oss.region,
+            bucket: localConfig.oss.bucket,
+            prefix: localConfig.oss.prefix,   // "<bucket>/<prefix>/icon_696aaa22.ttf"
             exclude: [/.*\.(html)$/], // 或者 /.*\.html$/,排除.html文件的上传  
             deleteAll: true,	  // 优先匹配format配置项
             // format: Date.now(), // 备份最近版本的oss文件，删除其他版本文件
